@@ -1,0 +1,13 @@
+
+
+            Backend For restaurent
+
+    --------------------------------------
+
+
+1.create a folder server  in restaurent-listing-app folder
+2. Create a package.jon file :- npm init -yarn
+3. Create a resst json services :- npm i json-server
+4. To connect different prt:- npm i cors
+5. Create gitignore file  and add node_modules in init
+6. create index.js file inside server folder and write code as below:
