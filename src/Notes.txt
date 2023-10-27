@@ -69,3 +69,11 @@
                          The react-router-dom package has useParams hooks that let you access the parameters of the current route.
  
             
+
+            Redux step
+            ---------
+
+            1.Create a store in src - store.js
+            2.To avaliable the store for enire application - index.js
+            3.Create Action  folder - RestlistAction.js to define logic
+            

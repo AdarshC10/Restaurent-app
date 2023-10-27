@@ -4,28 +4,34 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Restcard from '../RestCard/Restcard';
+import { RestaurentlistAction } from '../Action/RestlistAction';
+import { useDispatch, useSelector } from 'react-redux';
+//here we need to fetch data from store so we use hook need to import is useSelector 
 
 
 
 function AllRest() {
+  //  using useSelector to access the state
+  //using destructring
+  const {allrestaurents} = useSelector(state=>state.allrestReducers)
+  console.log(allrestaurents);
+
+  const dispatch =useDispatch()
   const [restaurant, setRestaurant] = useState([])
-const fetchData = async()=>{
-    const response =await axios.get('http://localhost:3001/restaurants')
-    console.log(response.data);
-    setRestaurant(response.data);
-  }
-  console.log(restaurant);
+
   //use hook is useEffect(()=>{},[])
   useEffect(()=>{
-    fetchData()
+   dispatch( RestaurentlistAction())
   },[])
+
 
 
   return (
     <>
       <Row>
         {
-        restaurant.map((item)=>(
+          //then restaurent will change through redux into allrestaurents
+          allrestaurents.map((item)=>(
           <Col sm={12} md={6} lg={4} xl={3}>
             <Restcard restlist={item}/>
           </Col>
